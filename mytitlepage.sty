@@ -12,18 +12,21 @@
 \def\thirdprofessor#1#2{\gdef\@thirdprofessor{#1#2}}
 \def\department#1{\gdef\@department{#1}}
 \def\studentnum#1{\gdef\@studentnum{#1}}
+\def\titlepagefont#1{
+    \newjfontfamily{\kaisho}{#1}
+}
 
 % font -------
 \usepackage{luatexja-fontspec}
-\newjfontfamily{\kaisho}{HGSeikaishotaiPRO}
 
 % titlepage
 \newcommand\mytitlepage{%
 \clearpage
 \thispagestyle{empty}
 \begin{center}
+    \ifdef\kaisho
     \kaisho
-
+    
     \vspace*{\fill}
     {\fontsize{75}{0} \selectfont {\@bigtitle} \par}
     \vspace{15mm}
