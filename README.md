@@ -1,20 +1,34 @@
-自分用。東京大学工学部電気系学科の卒業/修士/博士論文の表紙を作成するパッケージ。
+東京大学工学部電気系学科の卒業/修士/博士論文の表紙を作成するパッケージです。非公式非公認です。
 
-なお、HGSeikaishotaiPROというフォントが必要。Macにはデフォルトで入っていない。WindowsにOffice365をインストールすると`C:\Windows\Fonts`にダウンロードされるので、私は学科PCにOfficeを入れてからフォントをMacに移植した。
+## Requirements
+`luatexja-fontspec`を使用しているので$Lua\TeX$でないと動きません。
 
-### Requirements
-私の環境(`ltjsarticle`)では動作確認済み。`ltjsarticle`を使わない場合はパッケージの`\usepackage{luatexja-fontspec}`を`\usepackage{fontspec}`
-に置き換えれば動くはずです(未検証)。
+## フォントについて
+HGSeikaishotaiPROというフォントが必要です。Macにはデフォルトで入っていません。WindowsにOffice365をインストールすると`C:\Windows\Fonts`にダウンロードされるので、私は学科PCにOfficeを入れてからフォントをMacに移植しました。
+#### フォントをインストールした場合
+`\titlepagefont{HGSeikaishotaiPRO}`と書いてフォントを指定してください(例を参照)。
 
-### 使い方
-`mytitlepage.sty`を`.tex`と同じディレクトリに置く。
+#### フォントをインストールしていない場合(Overleaf等)
+フォントファイルを`.tex`ファイルと同じディレクトリに配置し、`\titlepagefont{[フォント名.TTF]}`でフォントを指定してください(例を参照)。
+
+
+## 使い方
+`mytitlepage.sty`を`.tex`と同じディレクトリに置きます。
+`\author`などで内容を指定します。
+`document`内に`\mytitlepage`と書くと表紙が生成されます。
+
+## 例
+##### コード
 ```tex
 \documentclass{ltjsarticle}
 \usepackage{luatexja}
 
 \usepackage{mytitlepage}
 
-% define ----------
+% define ----------}
+\titlepagefont{[HGRSKP.TTF]} % フォントファイルを配置した場合
+% \titlepagefont{HGSeishotaiPRO} % フォントをインストールした場合
+
 \bigtitle{卒業論文}
 
 \title{卒論をさいごの日まで残して\\おいた時の家族と自分の反応}
@@ -36,5 +50,5 @@
 \end{document}
 ```
 
-### 出力
+##### 出力
 ![](ex.png)
