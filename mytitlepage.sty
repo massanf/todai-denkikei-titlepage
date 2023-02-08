@@ -1,0 +1,61 @@
+\ProvidesPackage{mytitlepage}
+
+% date ---
+\usepackage[yyyymmdd]{datetime}
+\usepackage{bxwareki}
+\newdateformat{submitdateformat}{\warekisetdate{\THEYEAR}{\THEMONTH}{\THEDAY} \warekigengo　\arabic{warekiyear}年　{\THEMONTH}月　{\THEDAY}日}
+
+% variables ---
+\def\bigtitle#1{\gdef\@bigtitle{#1}}
+\def\professor#1#2{\gdef\@professor{#1#2}}
+\def\secondprofessor#1#2{\gdef\@secondprofessor{#1#2}}
+\def\thirdprofessor#1#2{\gdef\@thirdprofessor{#1#2}}
+\def\department#1{\gdef\@department{#1}}
+\def\studentnum#1{\gdef\@studentnum{#1}}
+
+% font -------
+\usepackage{luatexja-fontspec}
+\newjfontfamily{\kaisho}{HGSeikaishotaiPRO}
+
+% titlepage
+\newcommand\mytitlepage{%
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+    \kaisho
+
+    \vspace*{\fill}
+    {\fontsize{75}{0} \selectfont {\@bigtitle} \par}
+    \vspace{15mm}
+    
+    {\HUGE \@title \par}
+    \vspace{10mm}
+    
+    {\HUGE \submitdateformat\@date 提出 \par}
+    
+    \vspace{10mm}
+    
+    {\HUGE 指導教員　　\@professor \par}
+    
+    \ifdefined\@secondprofessor
+    {\HUGE 　　　　　　\@secondprofessor \par}
+    \else
+    \vspace{10mm}
+    \fi
+    
+    \ifdefined\@thirdprofessor
+    {\HUGE 　　　　　　\@thirdprofessor \par}
+    \else
+    \vspace{10mm}
+    \fi
+    
+    \vspace{20mm}
+    {\HUGE \@department \par}
+    \vspace{10mm}
+    {\HUGE \@studentnum　　\@author \par}
+    \vspace*{\fill}
+\end{center}
+\clearpage
+}
+
+\endinput
