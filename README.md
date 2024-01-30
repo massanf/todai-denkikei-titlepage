@@ -3,25 +3,27 @@
 ## Requirements
 フォントの都合上`luatexja-fontspec`を使用しているのでLuaTeXでないと動きません。
 
-## フォントについて
-あの表紙を忠実に再現しようとすると`HG正楷書体-PRO`(`HGRSKP.TTF`)というフォントが必要です。残念ながらMacやOverleafのデフォルトのフォントではありません。購入すると2万円ほどします。
-
-幸い、このフォントはWindowsにOffice365をインストールすると`C:\Windows\Fonts`にダウンロードされます。私は学科PCにOfficeを入れてからフォントをMacに移植しました。
-
-### フォントをインストールした場合
-`\titlepagefont{HGSeikaishotaiPRO}`と書いてフォントを指定してください(例を参照)。
-
-### フォントファイルを直接使う場合(Overleaf等)
-フォントファイルを`.tex`ファイルと同じディレクトリに配置し、`\titlepagefont{[フォント名.TTF]}`でフォントを指定してください(例を参照)。
-
-### フォントなんて気にしない場合(正解)
-`\titlepagefont`を指定しない場合はデフォルトのフォントが適用されます。
-
 
 ## 使い方
 `eeictitlepage.sty`をメインの`.tex`ファイルと同じディレクトリに置き、`\usepackage{eeictitlepage}`で読み込みます。
 
 `\author`など(例を参照)で内容を指定し、`document`内に`\eeictitlepage`と書くと表紙が生成されます。
+
+### フォントについて
+あの表紙を忠実に再現しようとすると`HG正楷書体-PRO`(`HGRSKP.TTF`)というフォントが必要です。残念ながらMacやOverleafのデフォルトのフォントではありません。購入すると2万円ほどします。
+
+幸い、このフォントはWindowsにOffice365をインストールすると`C:\Windows\Fonts`にダウンロードされます。私は学科PCにOfficeを入れてからフォントファイルをMacに移植しました。
+
+#### フォントをインストールした場合
+`\titlepagefont{HGSeikaishotaiPRO}`と書いてフォントを指定してください(例を参照)。
+
+#### フォントファイルを直接使う場合(Overleaf等)
+フォントファイルを`.tex`ファイルと同じディレクトリに配置し、`\titlepagefont{[フォント名.TTF]}`でフォントを指定してください(例を参照)。
+
+#### フォントなんて気にしない場合(正解)
+`\titlepagefont`を指定しない場合はデフォルトのフォントが適用されます。
+
+
 
 ## 例
 ##### コード
@@ -58,3 +60,6 @@
 
 ##### 出力
 ![](example.png)
+
+## 参考文献
+[https://nlab.itmedia.co.jp/nl/articles/1909/09/news080.html](https://nlab.itmedia.co.jp/nl/articles/1909/09/news080.html)
