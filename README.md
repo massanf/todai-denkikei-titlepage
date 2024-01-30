@@ -4,9 +4,9 @@
 フォントの都合上`luatexja-fontspec`を使用しているのでLuaTeXでないと動きません。
 
 ## フォントについて
-HGSeikaishotaiPROというフォントが必要です。残念ながらMacやOverleafのデフォルトフォントではありません。
+HG正楷書体-PRO(HGRSKP.TTF)というフォントが必要です。残念ながらMacやOverleafのデフォルトのフォントではありません。購入すると2万円ほどします。
 
-このフォントはWindowsにOffice365をインストールすると`C:\Windows\Fonts`にダウンロードされるので、私は学科PCにOfficeを入れてからフォントをMacに移植しました。
+幸い、このフォントはWindowsにOffice365をインストールすると`C:\Windows\Fonts`にダウンロードされます。私は学科PCにOfficeを入れてからフォントをMacに移植しました。
 
 #### フォントをインストールした場合
 `\titlepagefont{HGSeikaishotaiPRO}`と書いてフォントを指定してください(例を参照)。
@@ -16,9 +16,9 @@ HGSeikaishotaiPROというフォントが必要です。残念ながらMacやOve
 
 
 ## 使い方
-`eeictitlepage.sty`を`.tex`と同じディレクトリに置きます。
-`\author`などで内容を指定します。
-`document`内に`\mytitlepage`と書くと表紙が生成されます。
+`eeictitlepage.sty`をメインの`.tex`ファイルと同じディレクトリに置き、`\usepackage{eeictitlepage}`で読み込みます。
+
+`\author`などで内容を指定し、`document`内に`\eeictitlepage`と書くと表紙が生成されます。
 
 ## 例
 ##### コード
